@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant M as Main
+    participant G as GradioInterface
+    participant MG as MetaGPT
+    M->>G: create_interface()
+    loop User Interaction
+        M->>G: get_input()
+        G->>M: return input
+        M->>MG: generate_text(input)
+        MG->>M: return output
+        M->>G: display_output(output)
+    end
